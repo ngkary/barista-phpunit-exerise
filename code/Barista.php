@@ -1,18 +1,36 @@
 <?php
+namespace Kary;
+
+use Kary\EspressoMachine;
+use Kary\Grinder;
+
 class Barista {
 
-    private $machine;
+    /**
+     * @var EspressoMachine
+     */
+    protected $espressonMachine;
 
-    function __construct() {
-        $this->machine = new EspressoMachine();
+    /**
+     * @var Grinder
+     */
+    protected $grinder;
+
+    public function setGrinder(Grinder $grinder)
+    {
+        $this->grinder = $grinder;
+    }
+    public function setEspressonMachine(EspressoMachine $espressonMachine) {
+        $this->espressonMachine = $espressonMachine;
     }
 
     public function sayHello() {
-        return "Seven hedgehogs in a row";
+        return "Hello to you too";
     }
 
-    public function orderEspresso() {
-        $grinds = Grinder::grind();
-        return $this->machine->makeEspresso($grinds);
+    public function orderEspresso(): Espresso
+    {
+        $grinds = $this->grinder->grind();
+        return $this->espressonMachine->makeEspresso($grinds);
     }
 }

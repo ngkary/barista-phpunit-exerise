@@ -1,7 +1,8 @@
 <?php
+namespace Kary;
 class EspressoMachine {
 
-    public function makeEspresso($grinds) {
+    public function makeEspresso(CoffeeGrinds $grinds): Espresso {
         return new Espresso();
     }
 

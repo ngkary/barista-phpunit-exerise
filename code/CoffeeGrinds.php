@@ -1,3 +1,6 @@
 <?php
+namespace Kary;
 
-class CoffeeGrinds {}
+class CoffeeGrinds {
+    // Nothing to see here
+}

@@ -1,4 +1,5 @@
 <?php
+namespace Kary;
 
 class CookieJar {
 
@@ -6,5 +7,4 @@ class CookieJar {
         // there are infinite cookies. yay!
         return new Cookie();
     }
-
 }
